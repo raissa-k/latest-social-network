@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Binary Upload Boom</title>
+  <title>Your latest social network - <%= title %></title>
   <link rel="icon" type="image/png" sizes="32x32" href="/imgs/favicon-32x32.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
@@ -32,24 +32,13 @@
                   <div class="flex flex-1">
                   </div>
                   <div class="flex flex-1 justify-end md:justify-center">
-                    <div class="pointer-events-auto md:hidden">
-                      <button
-                        class="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20" 
-                        type="button" 
-                        aria-expanded="false">
-                        Menu
-                        <svg viewBox="0 0 8 6" aria-hidden="true" class="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400">
-                          <path d="M1.75 1.75 4 4.25l2.25-2.5" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                        </svg>
-                      </button>
-                    </div>
-                    <%if(navbar=="yes"){%>
+					<%if(navbar=="yes"){%>
                       <%- include('navbar.ejs') %>
                     <%}%>
                   </div>
                   <div class="flex justify-end md:flex-1">
                     <div class="pointer-events-auto">
-                      <button type="button" id="toggleMode" aria-label="Toggle dark mode" class="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20">
+                      <button type="button" id="toggleMode" aria-label="Toggle dark mode" class="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition duration-100 dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20 z-50">
                         <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600">
                           <path d="M8 12.25A4.25 4.25 0 0 1 12.25 8v0a4.25 4.25 0 0 1 4.25 4.25v0a4.25 4.25 0 0 1-4.25 4.25v0A4.25 4.25 0 0 1 8 12.25v0Z">
                           </path>
@@ -68,5 +57,9 @@
         </div>
       </div>
     </header>
-    <main>
+    <main class="sm:px-8 mt-16 sm:mt-32">
+		<div class="mx-auto max-w-7xl lg:px-8">
+			<div class="relative px-4 sm:px-8 lg:px-12">
+				<div class="mx-auto max-w-2xl lg:max-w-5xl">
+					
     

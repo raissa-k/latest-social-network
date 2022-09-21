@@ -1,46 +1,75 @@
-<%- include('partials/header', {navbar: "yes"}) -%>
-<div class="container">
-  <div class="row mt-5">
-      <div class="col-6">
-          <div>
-              <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
-              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
-          </div>
-          <div class="mt-5">
-            <h2>Add a post</h2>
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
-              <div class="mb-3">
-                  <label for="title" class="block">Title</label>
-                  <input type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="title" name="title">
-              </div>
-              <div class="mb-3">
-                <label for="caption" class="block">Caption</label>
-                <textarea class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="caption" name="caption"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="imgUpload" class="block">Image</label>
-                <input type="file" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="imageUpload" name="file">
-              </div>
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-            </form>
-          </div>
-      </div>
-      <div class="col-6">
-        <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
-            </a>
-          </li>
-        <% } %>
-        </ul>
-        <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
-        </div>  
-      </div>  
-    </div>
-  </div>
+<%- include('partials/header', {navbar: "yes", title: "User profile"}) -%>
+
+<header class="max-w-2xl">
+	<h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+		Hi, <%= user.userName %>.
+	</h1>
+	<p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+		Not all social networks are built the same. This one is. Or not. Kind of. You should try it just to see if I'm lying.
+		Anyway I hope these pictures of happy people can convince you.
+	</p>
+</header>
+
+<div class="mt-16 sm:mt-20">
+	<h2 class="mb-8 text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
+		Your latest posts:
+	</h2>
+	<div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+		<% for(var i=0; i < posts.length; i++) {%>
+		<div class="relative flex flex-col">
+			<figure class="relative flex-none rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:rounded-2xl">
+				<a href="/post/<%= posts[i]._id %>">
+					<img class="inset-0 object-cover object-center rounded-xl sm:rounded-2xl opacity-75 hover:opacity-100" src="<%= posts[i].image%>" role="link" aria-label="<%= posts[i].title %>">
+				</a>
+				<figcaption class="absolute bottom-0 rounded-b-xl sm:rounded-b-2xl text-base text-zinc-100 px-4 bg-zinc-800/70 w-full">
+					<div class="mt-1 mb-1">
+						<p><span class="sr-only">Number of likes:</span><span aria-hidden="true">🤍</span> <%= posts[i].likes %></p>
+						<p><%= new Date(posts[i].createdAt).toLocaleDateString('en', { year: 'numeric' , month: 'short' , day: '2-digit' }) %></p>
+					</div>
+				</figcatpion>
+			</figure>
+		</div>
+		<% } %>
+	</div>	
 </div>
+</div>
+
+<div class="container">
+	<div class="row mt-5">
+		<div class="col-6">
+			<div>
+				<p><strong>User Name</strong>: <%= user.userName %></p>
+				<p><strong>Email</strong>: <%= user.email %></p>
+				<a href="/logout" class="col-3 btn btn-primary">Logout</a>
+			</div>
+			<div class="mt-5">
+			  <h2>Add a post</h2>
+			  <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+				<div class="mb-3">
+					<label for="title" class="block">Title</label>
+					<input type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="title" name="title">
+				</div>
+				<div class="mb-3">
+				  <label for="caption" class="block">Caption</label>
+				  <textarea class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="caption" name="caption"></textarea>
+				</div>
+				<div class="mb-3">
+				  <label for="imgUpload" class="block">Image</label>
+				  <input type="file" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="imageUpload" name="file">
+				</div>
+				<button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+			  </form>
+			</div>
+		</div>
+				
+  
+			
+		  <div class="row justify-content-center mt-5">
+			<a class="btn btn-primary" href="/feed">Return to Feed</a>
+		  </div>  
+	  </div>
+	</div>
+  </div>
+
+
 <%- include('partials/footer') -%>
