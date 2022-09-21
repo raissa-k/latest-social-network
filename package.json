@@ -5,11 +5,15 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/style.css"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@tailwindcss/typography": "github:tailwindcss/typography",
+    "apicache": "^1.6.3",
+    "autoprefixer": "^10.4.11",
     "bcrypt": "^5.0.1",
     "cloudinary": "^1.25.1",
     "connect-mongo": "^3.2.0",
@@ -23,9 +27,17 @@
     "mongoose": "^5.12.3",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
+    "node-fetch": "^2.6.7",
     "nodemon": "^2.0.7",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
+    "postcss": "^8.4.16",
+    "postcss-cli": "^10.0.0",
+    "tailwindcss": "^3.1.8",
+    "unsplash-js": "^7.0.15",
     "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3"
   }
 }

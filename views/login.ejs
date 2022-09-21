@@ -1,4 +1,4 @@
-<%- include('partials/header') -%>
+<%- include('partials/header', {navbar: "no"}) -%>
 
 <main class="container">
   <div class="row justify-content-center">
@@ -11,22 +11,20 @@
       <% }) %> <% } %>
       <form action="/login" method="POST">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >Email address</label
-          >
+          <label for="exampleInputEmail1" class="block"
+            >Email address</label>
           <input
-            type="email"
-            class="form-control"
+            type="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             name="email"
           />
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <label for="exampleInputPassword1" class="block">Password</label>
           <input
             type="password"
-            class="form-control"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             id="exampleInputPassword1"
             name="password"
           />
