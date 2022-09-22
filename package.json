@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/style.css"
+    "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/style.css",
+    "build:css": "postcss public/styles/style.css -o public/styles/style.min.css"
   },
   "author": "",
   "license": "MIT",
@@ -38,6 +39,7 @@
     "validator": "^13.6.0"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.3"
+    "@tailwindcss/forms": "^0.5.3",
+    "cssnano": "^5.1.13"
   }
 }

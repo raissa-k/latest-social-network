@@ -47,19 +47,7 @@ function toggleMode() {
 	}
 }
 
-/*///////////////////////////
-/// Toggle menu
-//////////////////////////*/
 
-/* const navbarToggle = document.getElementById("navbar-toggle");
-const navbarMobile = document.getElementById("navbar-mobile");
-
-// add event listener
-navbarToggle.addEventListener("click", () => {
-  navbarMobile.classList.toggle("hidden");
-});
-
- */
 /*///////////////////////////
 /// Back to top
 //////////////////////////*/
