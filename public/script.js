@@ -47,6 +47,42 @@ function toggleMode() {
 	}
 }
 
+/*///////////////////////////
+/// Like and Delete
+//////////////////////////*/
+
+async function likePost(post) {
+	try {
+		const response = await fetch(`/post/like/${post}`, {
+			method: 'put',
+			headers: { 'Content-type': 'application/json' },
+			body: JSON.stringify({
+				id: post
+			})
+		})
+		const data = await response.json()
+		location.reload()
+	} catch (error) {
+		console.log(error)
+	}
+}
+
+async function deletePost(post){
+	try {
+		const response = await fetch(`/post/${post}`, {
+			method: 'delete',
+			headers: { 'Content-type': 'application/json' },
+			body: JSON.stringify({
+				id: post
+			})
+		})
+		const data = await response.json()
+		document.getElementById('closeDeleteModal').click()
+		location.replace('/profile')
+	} catch (err) {
+		console.error(err)
+	}
+}
 
 /*///////////////////////////
 /// Back to top
@@ -113,13 +149,6 @@ function toggleMode() {
  * Modal
  * modal.openModal('modal-name');
  */
-
-
-/**
- * Modal
- * modal.openModal('modal-name');
- */
-
 const modal = (() => {
 
 	var publicAPIs = {};

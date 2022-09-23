@@ -10,8 +10,8 @@
 		
 			<section class="w-full rounded-lg divide-y rounded divide-slate-200 dark:border-zinc-700 text-gray-900 dark:text-white shadow-md shadow-teal-500/40">
 
-				<details class="p-4 group">
-					<summary class="[&::-webkit-details-marker]:hidden relative pr-8 font-medium list-none cursor-pointer text-gray-900 dark:text-white focus-visible:outline-none group-hover:text-gray-500 group-hover:dark:text-gray-400 transition">
+				<details class="p-4 group focus:ring focus-within:ring-teal-400 focus-within:ring-opacity-70">
+					<summary class="[&::-webkit-details-marker]:hidden relative pr-8 font-medium list-none cursor-pointer text-gray-900 dark:text-white group-hover:text-gray-500 group-hover:dark:text-gray-400 transition">
 						Change profile picture
 						<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 w-6 h-6 transition -rotate-90 duration-300 top-1 stroke-slate-700 dark:stroke-slate-300 group-open:rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
 							<path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
@@ -40,8 +40,8 @@
 					</form>
 				</details>
 
-				<details class="p-4 group">
-					<summary class="[&::-webkit-details-marker]:hidden relative pr-8 font-medium list-none cursor-pointer text-gray-900 dark:text-white focus-visible:outline-none group-hover:text-gray-500 group-hover:dark:text-gray-400 transition">
+				<details class="p-4 group focus:outline-none focus:ring focus:ring-offset-3 focus:ring-teal-400 focus:ring-opacity-70">
+					<summary class="[&::-webkit-details-marker]:hidden relative pr-8 font-medium list-none cursor-pointer text-gray-900 dark:text-white group-hover:text-gray-500 group-hover:dark:text-gray-400 transition">
 						Change name or e-mail
 						<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 w-6 h-6 transition -rotate-90 duration-300 top-1 stroke-slate-700 dark:stroke-slate-300 group-open:rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
 							<path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
@@ -86,8 +86,8 @@
 					</div>
 				</details>
 
-				<details class="p-4 group">
-					<summary class="[&::-webkit-details-marker]:hidden relative pr-8 font-medium list-none cursor-pointer text-zinc-800 dark:text-zinc-200 focus-visible:outline-none group-hover:text-zinc-600 group-hover:dark:text-zinc-300 transition">
+				<details class="p-4 group focus:outline-none focus:ring focus:ring-offset-3 focus:ring-teal-400 focus:ring-opacity-70">
+					<summary class="[&::-webkit-details-marker]:hidden relative pr-8 font-medium list-none cursor-pointer text-zinc-800 dark:text-zinc-200 group-hover:text-zinc-600 group-hover:dark:text-zinc-300 transition">
 						Change password
 						<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 w-6 h-6 transition -rotate-90 duration-300 top-1 stroke-slate-700 dark:stroke-slate-300 group-open:rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
 							<path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
@@ -153,10 +153,8 @@
 			  <label for="caption" class="block mb-2 font-medium text-gray-900 dark:text-gray-300">Caption</label>
 			  <textarea class="block w-full bg-gray-50 rounded-lg border border-gray-300 cursor-pointer focus:ring focus:ring-offset-3 focus:ring-teal-400 focus:ring-opacity-70 dark:bg-zinc-800/90 dark:placeholder-zinc-200 dark:border-gray-600" id="caption" name="caption" required></textarea>
 			</div>
+
 			<div class="mb-3">
-				
-
-
 			<label class="block mb-2 font-medium text-gray-900 dark:text-gray-300" for="imageUpload">Image</label>
 			<input type="file" class="block w-full text-sm bg-gray-50 rounded-lg border border-gray-300 cursor-pointer file:mr-4 file:py-2 file:px-4 file:border file:border-e file:border-gray-200 dark:file:border-0 file:text-base file:font-semibold file:bg-zinc-100 dark:file:bg-zinc-700 file:text-zinc-700 dark:file:text-zinc-200 hover:file:bg-zinc-200 dark:hover:file:bg-zinc-600 focus:ring focus:ring-offset-3 focus:ring-teal-400 focus:ring-opacity-70 dark:bg-zinc-800/90 dark:placeholder-zinc-200 dark:border-gray-600" id="imageUpload" placeholder="No file" name="file" required>
 			</div>
@@ -169,28 +167,30 @@
 					</svg>
 				</span>
 				Submit post
-			  </button>
+			</button>
 		  </form>  
 
 	</div>
 
 	<div class="lg:pl-20">
-		<h3 class="mb-8 text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
+		<% if (posts.length) {%>
+		<h3 id="latestPosts" class="mb-8 text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
 			Your latest posts:
 		</h3>
+		<% } %>
 		<div class="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-2">
 			<% for(var i=0; i < posts.length; i++) {%>
 			<div class="relative flex flex-col mx-auto group">
 				<figure class="relative transition flex-none rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:rounded-2xl max-w-xs shadow-md shadow-teal-500/30 group-hover:shadow-lg group-hover:shadow-teal-500/40">
-					<a href="/post/<%= posts[i]._id %>">
-						<img class="inset-0 object-cover object-center rounded-xl sm:rounded-2xl opacity-75 group-hover:opacity-100 transition" src="<%= posts[i].image.split('upload').join('upload/c_thumb,w_320,g_face') %>" width="320" role="link" aria-label="<%= posts[i].title %>">
+					<a href="/post/<%= posts[i]._id %>" aria-label="See the post <%= posts[i].title %>">
+						<img class="inset-0 object-cover object-center rounded-xl sm:rounded-2xl opacity-75 group-hover:opacity-100 transition" src="<%= posts[i].image.split('upload').join('upload/ar_16:9,c_thumb,w_320,g_center') %>" width="320" role="link">
+					</a>
 					<figcaption class="absolute bottom-0 rounded-b-xl sm:rounded-b-2xl text-base text-zinc-100 px-4 bg-zinc-800/70 w-full max-w-xs">
 						<div class="mt-1 mb-1">
 							<p><span class="sr-only">Number of likes:</span><span aria-hidden="true">🤍</span> <%= posts[i].likes %></p>
 							<p><%= new Date(posts[i].createdAt).toLocaleDateString('en', { year: 'numeric' , month: 'short' , day: '2-digit' }) %></p>
 						</div>
 					</figcatpion>
-					</a>
 				</figure>
 			</div>
 			<% } %>
