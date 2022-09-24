@@ -28,8 +28,8 @@
 				
 				<div data-modal-wrapper="" data-class-in="opacity-100 translate-y-0" data-class-out="opacity-0 translate-y-5" class="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800 opacity-100 scale-100 duration-150 motion-reduce:transition-none">
 					<div class="flex items-center justify-between">
-					<h3 id="modalmenu-title" class="text-sm font-medium text-zinc-600 dark:text-zinc-400">
-						<span class="sr-only">Dialog</span> Menu
+					<h3 id="modalmenu-title" class="text-lg font-medium text-zinc-600 dark:text-zinc-400">
+						Menu
 						<span class="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0"></span>
 					</h3>
 					<button data-modal-close="" aria-label="Close" type="button" class="text-gray-700 hover:text-black focus:text-black ml-auto">
@@ -45,12 +45,6 @@
 							</li>
 							<li>
 								<a href="/feed" class="block py-2 transition hover:text-teal-500 dark:hover:text-teal-400">Feed</a>
-							</li>
-							<li>
-								<a href="#" class="block py-2 transition hover:text-teal-500 dark:hover:text-teal-400">Log out</a>
-							</li>
-							<li>
-								<a href="#" class="block py-2 transition hover:text-teal-500 dark:hover:text-teal-400">Revenues</a>
 							</li>
 							<hr class="m-2 border-slate-300/40">
 							<li>
@@ -70,7 +64,7 @@
 			</div>
 	</div>
 	<nav class="pointer-events-auto hidden md:flex md:gap-x-6 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 px-8 rounded-full dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10" id="navbar-default">
-		<a class="relative block px-2 py-2 transition text-teal-600 dark:text-teal-400 hover:text-teal-500 dark:hover:text-teal-200" href="/logout">Add post</a>
+		<a class="relative block px-2 py-2 transition text-teal-600 dark:text-teal-400 hover:text-teal-500 dark:hover:text-teal-200" href="/profile#addPost">Add post</a>
 		<a class="relative block px-2 py-2 transition hover:text-teal-500 dark:hover:text-teal-400" href="/profile">Profile<%if(active=="profile"){%><span class="absolute inset-x-1 -bottom-px h-0.5 bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0"></span><%}%></a>
 		<a class="relative block px-2 py-2 transition hover:text-teal-500 dark:hover:text-teal-400" href="/feed">Feed<%if(active=="feed"){%><span class="absolute inset-x-1 -bottom-px h-0.5 bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0"></span><%}%></a>
 		<a class="relative block px-2 py-2 transition text-teal-600 dark:text-teal-400 hover:text-teal-500 dark:hover:text-teal-200" href="/logout">Log out</a>

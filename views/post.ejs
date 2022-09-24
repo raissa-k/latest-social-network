@@ -92,10 +92,13 @@
 				Comments
 			</h2>
 			<% comment.forEach( el=> { %>
-			<div class="mt-4 prose dark:prose-invert">
-				<span class="text-black/90 font-semibold tracking-tight dark:text-white/90 text-lg mr-2"><%= el.createdBy %></span>
-				<p class="inline"><%= el.comment %></p>
-				<span class="h-">				  
+			<div class="py-6 flex px-2 space-x-4 align-text-top relative">
+				<img class="inline w-8 h-8 rounded-full object-cover" src="<%= el.picture ? el.picture : 'https://api.lorem.space/image/face?w=50&h=50' %>" aria-hidden="true">
+				<div class="prose dark:prose-invert">
+					<span class="text-black/90 font-semibold tracking-tight dark:text-white/90 text-lg mr-2"><%= el.createdBy %></span>
+					<p class="inline"><%= el.comment %></p>
+				</div>
+				<span class="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0"></span>
 			</div>
 			<% }) %>
 

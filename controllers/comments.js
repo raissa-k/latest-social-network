@@ -8,6 +8,7 @@ module.exports = {
         likes: 0,
         user: req.user.id,
 		createdBy: req.user.userName,
+		picture: req.user.profile,
         post: req.body.post
       });
       console.log("Comment has been added!");
