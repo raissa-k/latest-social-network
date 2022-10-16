@@ -33,9 +33,8 @@ A project to practice handling file uploads, user authentication, and styling wi
 - [User flow (in Wiki)](https://github.com/raissa-k/latest-social-network/wiki/User-flow)
 ## Demo
 
-**Website**: [Latest Social Network](https://latest-social-network.onrender.com)
+**Website**: [Latest Social Network](https://latest-social-network.up.railway.app)
 
-Note that the website is hosted on Render and may take a while to load if it has been inactive for a while.
 ```
 To avoid signing up, you may log in with the following credentials:
 - Email: tester3@gmail.com
