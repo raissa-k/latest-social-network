@@ -33,7 +33,7 @@ A project to practice handling file uploads, user authentication, and styling wi
 - [User flow (in Wiki)](https://github.com/raissa-k/latest-social-network/wiki/User-flow)
 ## Demo
 
-**Website**: [Latest Social Network](https://latest-social-network.up.railway.app)
+**Website**: [Latest Social Network](https://latestsocialnetwork.raissak.com/)
 
 ```
 To avoid signing up, you may log in with the following credentials:
