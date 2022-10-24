@@ -14,10 +14,6 @@ A project to practice handling file uploads, user authentication, and styling wi
   * [Links](#links)
   * [Demo](#demo)
   * [Screenshots](#screenshots)
-    + [Home Page (light mode)](#home-page--light-mode-)
-    + [Picture feed (smaller screen, dark mode)](#picture-feed--smaller-screen--dark-mode-)
-    + [Post (light mode)](#post--light-mode-)
-    + [User profile (light mode)](#user-profile--light-mode-)
   * [Tech Stack](#tech-stack)
   * [Features](#features)
   * [Run Locally](#run-locally)
@@ -42,6 +38,12 @@ To avoid signing up, you may log in with the following credentials:
 ```
 ## Screenshots
 
+<details><summary>
+ 
+ ### Screenshots
+ 
+ </summary>
+
 ### Home Page (light mode)
 ![Home Page (light mode)](https://i.imgur.com/2JqhYmXl.png)
 
@@ -53,46 +55,17 @@ To avoid signing up, you may log in with the following credentials:
 
 ### User profile (light mode)
 ![User profile (light mode)](https://i.imgur.com/HWo0Wlll.png)
+ 
+ </details>
+
+![Gif animation of navigation through the project](https://user-images.githubusercontent.com/91985540/197557863-5d0b4d10-87c3-46bb-9317-98fc4f7e27aa.gif)
+
 ## Tech Stack
 
 **Client:** JavaScript, EJS, Tailwind CSS
 
 **Server:** Node, Express, MongoDB
 
-**Dependencies:** 
-```js
-"dependencies": {
-    "@tailwindcss/typography": "github:tailwindcss/typography",
-    "apicache": "^1.6.3",
-    "autoprefixer": "^10.4.11",
-    "bcrypt": "^5.0.1",
-    "cloudinary": "^1.25.1",
-    "connect-mongo": "^3.2.0",
-    "dotenv": "^8.2.0",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "express-flash": "^0.0.2",
-    "express-session": "^1.17.1",
-    "method-override": "^3.0.0",
-    "mongodb": "^3.6.5",
-    "mongoose": "^5.12.3",
-    "morgan": "^1.10.0",
-    "multer": "^1.4.5-lts.1",
-    "node-fetch": "^2.6.7",
-    "nodemon": "^2.0.7",
-    "passport": "^0.6.0",
-    "passport-local": "^1.0.0",
-    "postcss": "^8.4.16",
-    "postcss-cli": "^10.0.0",
-    "tailwindcss": "^3.1.8",
-    "unsplash-js": "^7.0.15",
-    "validator": "^13.6.0"
-  },
-  "devDependencies": {
-    "@tailwindcss/forms": "^0.5.3",
-    "cssnano": "^5.1.13"
-  }
-```
 ## Features
 
 - Secure login with Passport Auth
